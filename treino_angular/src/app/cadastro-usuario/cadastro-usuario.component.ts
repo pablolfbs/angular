@@ -47,4 +47,8 @@ export class CadastroUsuarioComponent implements OnInit {
     return this.formulario.controls.email.errors && this.isUntoched('email')
   }
 
+  formularioInvalido() {
+    return !this.formulario.valid
+  }
+
 }
