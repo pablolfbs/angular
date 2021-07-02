@@ -10,7 +10,7 @@ export class CadastroUsuarioComponent implements OnInit {
 
   formulario = this.formBuilder.group({
     nome: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
-    cpf: [null, [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
+    cpf: [null, [Validators.required, Validators.minLength(11), Validators.maxLength(11), Validators.pattern('[0-9]+$')]],
     email: [null, [Validators.required, Validators.email]]
   })
 

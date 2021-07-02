@@ -6,29 +6,20 @@
             </div>
         </div>
         <div class="form-group row mt-5">
-            <div class="col-1">
-                <p>Nome</p>
-            </div>
-            <div class="col-11">
-                <input type="text" class="form-control" formControlName="nome" #nome [ngClass]="aplicaCssErro('nome')">
+            <div class="col-12">
+                <input type="text" class="form-control" formControlName="nome" #nome [ngClass]="aplicaCssErro('nome')" placeholder="digite seu nome">
             </div>
             <!-- {{ nome.value }} -->
         </div>
         <div class="form-group row mt-3" *ngIf="!isInvalid('nome')">
             <!-- [ngClass]="{'input-error': formControls.controls.option1.isValid} -->
-            <div class="col-1">
-                <p>CPF</p>
-            </div>
-            <div class="col-11">
-                <input type="text" class="form-control" formControlName="cpf" [ngClass]="aplicaCssErro('cpf')">
+            <div class="col-12">
+                <input type="text" class="form-control" formControlName="cpf" [ngClass]="aplicaCssErro('cpf')" placeholder="digite seu CPF">
             </div>
         </div>
         <div class="form-group row mt-3" *ngIf="!isInvalid('nome') && !isInvalid('cpf')">
-            <div class="col-1">
-                <p>E-mail</p>
-            </div>
-            <div class="col-11">
-                <input type="text" class="form-control" formControlName="email" [ngClass]="aplicaCssErro('email')">
+            <div class="col-12">
+                <input type="text" class="form-control" formControlName="email" [ngClass]="aplicaCssErro('email')" placeholder="digite seu E-mail">
                 <small class="text-danger" *ngIf="emailInvalido()">E-mail inválido</small>
             </div>
         </div>
