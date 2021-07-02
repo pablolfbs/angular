@@ -1,0 +1,46 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let field of fieldArray; let i = index">
+            <td>
+                Teste
+            </td>
+            <td>
+                <select>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+            </td>
+            <td>
+                <input [(ngModel)]="field.price" class="form-control" type="text" name="{{field.price}}" />
+            </td>
+            <td>
+                <button class="btn btn-default" type="button" (click)="deleteFieldValue(i)">Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="form-control" type="text" id="newAttributeCode" [(ngModel)]="newAttribute.code"
+                    name="newAttributeCode" />
+            </td>
+            <td>
+                <input class="form-control" type="text" id="newAttributeName" [(ngModel)]="newAttribute.name"
+                    name="newAttributeName" />
+            </td>
+            <td>
+                <input class="form-control" type="text" id="newAttributePrice" [(ngModel)]="newAttribute.price"
+                    name="newAttributePrice" />
+            </td>
+            <td>
+                <button class="btn btn-default" type="button" (click)="addFieldValue()">Add</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
