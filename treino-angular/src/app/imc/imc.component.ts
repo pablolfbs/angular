@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-imc',
@@ -7,18 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImcComponent implements OnInit {
 
-  peso: number | undefined
-  altura: number | undefined
+  formulario = this.formBuilder.group({
+    peso: [null, [Validators.required]],
+    altura: [null, [Validators.required]]
+  })
+
   resultado: number | undefined
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    // IMC = Peso ÷ (Altura × Altura)
   }
 
   calcularImc() {
-    // IMC = Peso ÷ (Altura × Altura)
-    this.resultado! = this.peso! / (this.altura! * this.altura!)
+    if (this.formulario.controls.peso.valid && this.formulario.controls.altura.valid)
+      this.resultado = this.formulario.controls.peso.value / (this.formulario.controls.altura.value * this.formulario.controls.altura.value)
+    else
+      this.resultado = undefined
   }
-
 }
