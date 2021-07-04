@@ -9,7 +9,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class CadastroUsuarioComponent implements OnInit {
 
   formulario = this.formBuilder.group({
-    nome: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
+    nome: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(20), Validators.pattern('[a-zA-Z ]*')]],
     cpf: [null, [Validators.required]],
     email: [null, [Validators.required, Validators.email]]
   })
