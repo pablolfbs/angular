@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./celsius-fahrenheit.component.css']
 })
 export class CelsiusFahrenheitComponent implements OnInit {
-  title = 'celsiusFahrenheit';
   
-  celsius: number | undefined
-  fahrenheit: number | undefined
+  celsius: number = 0
+  fahrenheit: number = this.celsiusToFahrenheit()
 
   constructor() { }
 
@@ -19,11 +18,11 @@ export class CelsiusFahrenheitComponent implements OnInit {
   }
 
   celsiusToFahrenheit() {
-    this.fahrenheit = this.celsius! * 1.8 + 32
+    return this.fahrenheit = this.celsius! * 1.8 + 32
   }
 
   fahrenheitToCelsius() {
-    this.celsius = 5 / 9 * (this.fahrenheit! - 32)
+    return this.celsius = 5 / 9 * (this.fahrenheit! - 32)
   }
 
 }

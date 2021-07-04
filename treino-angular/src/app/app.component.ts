@@ -8,24 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
 
   title = 'treino-angular'
-  showInputsTemperatura: boolean = false
-  showInputsImc: boolean = false
-  showInputsCadastroUsuario: boolean = false
+  campo: string = ''
   
   constructor() { }
 
   ngOnInit(): void { }
 
-  showInputTemperatura() {
-    this.showInputsTemperatura = !this.showInputsTemperatura ? true : false
+  showInput(campo: string) {
+    this.campo = campo
   }
-
-  showInputImc() {
-    this.showInputsImc = !this.showInputsImc ? true : false
-  }
-
-  showInputCadastroUsuario() {
-    this.showInputsCadastroUsuario = !this.showInputsCadastroUsuario ? true : false
-  }
-
+  
 }
