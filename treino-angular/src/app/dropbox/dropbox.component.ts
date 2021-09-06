@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-dropbox',
@@ -7,7 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DropboxComponent implements OnInit {
 
-  constructor() { }
+  states = [
+    {name: 'Arizona', abbrev: 'AZ'},
+    {name: 'California', abbrev: 'CA'},
+    {name: 'Colorado', abbrev: 'CO'},
+    {name: 'New York', abbrev: 'NY'},
+    {name: 'Pennsylvania', abbrev: 'PA'},
+  ]
+
+  form = this.formBuilder.group({
+    state: [null]
+  })
+
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
   }

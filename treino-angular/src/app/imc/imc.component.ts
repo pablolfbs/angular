@@ -9,8 +9,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class ImcComponent implements OnInit {
 
   formulario = this.formBuilder.group({
-    peso: [null, [Validators.required]],
-    altura: [null, [Validators.required]]
+    peso: [null, [Validators.required, Validators.min(0), Validators.max(400)]],
+    altura: [null, [Validators.required, Validators.min(0.5), Validators.max(2.5)]]
   })
 
   resultado: number | undefined
@@ -22,9 +22,29 @@ export class ImcComponent implements OnInit {
   }
 
   calcularImc() {
-    if (this.formulario.controls.peso.valid && this.formulario.controls.altura.valid)
+    if (!this.isInvalid('peso') && !this.isInvalid('altura'))
       this.resultado = this.formulario.controls.peso.value / (this.formulario.controls.altura.value * this.formulario.controls.altura.value)
     else
       this.resultado = undefined
+  }
+
+  pesoInvalido() {
+    return this.formulario.controls.peso.errors && this.isUntoched('peso')
+  }
+
+  alturaInvalida() {
+    return this.formulario.controls.altura.errors && this.isUntoched('altura')
+  }
+
+  isInvalid(campo: string) {
+    return !this.formulario.controls[campo]?.valid
+  }
+
+  isUntoched(campo: string) {
+    return !this.formulario.controls[campo]?.pristine
+  }
+
+  aplicaCssErro(campo: string) {
+    return { 'input-error': this.isInvalid(campo) && this.isUntoched(campo) }
   }
 }

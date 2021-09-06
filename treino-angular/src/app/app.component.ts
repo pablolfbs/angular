@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   inputTemperatura: boolean = false
   inputImc: boolean = false
   inputCadastroUsuario: boolean = false
+  inputDropbox: boolean = false
   
   constructor() { }
 
@@ -20,16 +21,26 @@ export class AppComponent implements OnInit {
     this.inputTemperatura = !this.inputTemperatura ? true : false
     this.inputImc = false
     this.inputCadastroUsuario = false
+    this.inputDropbox = false
   }
 
   showInputImc() {
     this.inputImc = !this.inputImc ? true : false
     this.inputTemperatura = false
     this.inputCadastroUsuario = false
+    this.inputDropbox = false
   }
 
   showInputCadastroUsuario() {
     this.inputCadastroUsuario = !this.inputCadastroUsuario ? true : false
+    this.inputTemperatura = false
+    this.inputImc = false
+    this.inputDropbox = false
+  }
+
+  showInputDropbox() {
+    this.inputDropbox = !this.inputDropbox ? true : false
+    this.inputCadastroUsuario = false
     this.inputTemperatura = false
     this.inputImc = false
   }

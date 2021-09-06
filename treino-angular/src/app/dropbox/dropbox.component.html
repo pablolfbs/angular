@@ -1,1 +1,33 @@
-<p>dropbox works!</p>
+<div class="container mt-5">
+    <form [formGroup]="form">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center">Dropbox</h1>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <select class="form-select col-12" aria-label="Default select example" formControlName="state">
+                <option *ngFor="let state of states" [ngValue]="state">
+                    {{ state.abbrev }}
+                </option>
+            </select>
+        </div>
+    </form>
+
+    <p>Form value: {{ form.value | json }}</p>
+    <!-- { state: {name: 'New York', abbrev: 'NY'} } -->
+
+    <form #f="ngForm">
+        <div class="row">
+            <select class="form-select col-12" aria-label="Default select example" name="state" ngModel>
+                <option value="" disabled>Choose a state</option>
+                <option *ngFor="let state of states" [ngValue]="state.abbrev">
+                    {{ state.abbrev }}
+                </option>
+            </select>
+        </div>
+    </form>
+</div>
+
+<p>Form value: {{ f.value | json }}</p>
+<!-- example value: { state: {name: 'New York', abbrev: 'NY'} } -->

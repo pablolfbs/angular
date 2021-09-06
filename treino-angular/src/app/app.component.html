@@ -1,21 +1,25 @@
 <div class="container">
 
     <div class="row mt-5">
-        <div class="col-4 text-center">
+        <div class="col-3 text-center">
             <button type="button" class="btn btn-secondary" (click)="showInputTemperatura()">Mostrar Cálculo de
         Temperatura</button>
         </div>
-        <div class="col-4 text-center">
+        <div class="col-3 text-center">
             <button type="button" class="btn btn-secondary" (click)="showInputImc()">Mostrar Cálculo de IMC</button>
         </div>
-        <div class="col-4 text-center">
+        <div class="col-3 text-center">
             <button type="button" class="btn btn-secondary" (click)="showInputCadastroUsuario()">Mostrar Cadastro de
                 Usuário</button>
+        </div>
+        <div class="col-3 text-center">
+            <button type="button" class="btn btn-secondary" (click)="showInputDropbox()">Mostrar Dropbox</button>
         </div>
     </div>
 
     <app-celsius-fahrenheit *ngIf="inputTemperatura"></app-celsius-fahrenheit>
     <app-imc *ngIf="inputImc"></app-imc>
     <app-cadastro-usuario *ngIf="inputCadastroUsuario"></app-cadastro-usuario>
+    <app-dropbox *ngIf="inputDropbox"></app-dropbox>
 
 </div>
