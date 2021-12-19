@@ -1,0 +1,12 @@
+[
+    { "_id": "1", "name": "Angular", "category": "front-end" },
+    { "_id": "2", "name": "Java", "category": "back-end" },
+    { "_id": "3", "name": "JavaScript", "category": "front-end" },
+    { "_id": "4", "name": "Python", "category": "back-end" },
+    { "_id": "5", "name": "PHP", "category": "back-end" },
+    { "_id": "6", "name": "Kotlin", "category": "back-end" },
+    { "_id": "7", "name": "ReactJS", "category": "front-end" },
+    { "_id": "8", "name": "VueJS", "category": "front-end" },
+    { "_id": "9", "name": "JQuery", "category": "front-end" },
+    { "_id": "10", "name": "ReactNative", "category": "front-end" }
+]
