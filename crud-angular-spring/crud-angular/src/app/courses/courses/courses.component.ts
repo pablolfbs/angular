@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 import { MatDialog } from '@angular/material/dialog'
 import { Observable, of } from 'rxjs'
 import { catchError } from 'rxjs/operators'
@@ -11,7 +11,7 @@ import { CoursesService } from '../services/courses.service'
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.scss']
 })
-export class CoursesComponent implements OnInit {
+export class CoursesComponent {
 
   courses$: Observable<Course[]>
   // courses: Course[] = []
@@ -31,10 +31,6 @@ export class CoursesComponent implements OnInit {
         })
       )
     // this.coursesService.list().subscribe(courses => this.courses = courses)
-  }
-
-  ngOnInit(): void {
-
   }
 
   onError(errorMsg: string) {

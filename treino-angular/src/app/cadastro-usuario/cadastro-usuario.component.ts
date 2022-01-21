@@ -10,8 +10,9 @@ export class CadastroUsuarioComponent implements OnInit {
 
   formulario = this.formBuilder.group({
     nome: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(20), Validators.pattern('[a-zA-Z ]*')]],
-    cpf: [null, [Validators.required]],
-    email: [null, [Validators.required, Validators.email]]
+    cpf_cnpj: [null, [Validators.required]],
+    email: [null, [Validators.required, Validators.email]],
+    telefone: [null, [Validators.required]]
   })
 
   constructor(private formBuilder: FormBuilder) { }
@@ -38,13 +39,13 @@ export class CadastroUsuarioComponent implements OnInit {
   isUntoched(campo: string) {
     return !this.formulario.controls[campo]?.pristine
   }
-  
+
   aplicaCssErro(campo: string) {
     return { 'input-error': this.isInvalid(campo) && this.isUntoched(campo) }
   }
 
-  emailInvalido() {
-    return this.formulario.controls.email.errors && this.isUntoched('email')
+  errorMsg(campo: string) {
+    return this.formulario.controls[campo].errors && this.isUntoched(campo)
   }
 
   formularioInvalido() {

@@ -10,6 +10,8 @@ import { ImcComponent } from './imc/imc.component';
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
 import { DropboxComponent } from './dropbox/dropbox.component';
 import { NgxMaskModule } from 'ngx-mask';
+import { HighlightDirective } from './directives/highlight.directive';
+import { FormatadorMonetarioDirective } from './directives/formatador-monetario.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { NgxMaskModule } from 'ngx-mask';
     CelsiusFahrenheitComponent,
     ImcComponent,
     CadastroUsuarioComponent,
-    DropboxComponent
+    DropboxComponent,
+    HighlightDirective,
+    FormatadorMonetarioDirective
   ],
   imports: [
     BrowserModule,

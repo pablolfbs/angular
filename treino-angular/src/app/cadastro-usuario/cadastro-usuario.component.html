@@ -8,19 +8,27 @@
         <div class="form-group row mt-5">
             <div class="col-12">
                 <input type="text" class="form-control" formControlName="nome" #nome [ngClass]="aplicaCssErro('nome')" placeholder="digite seu nome">
+                <small class="text-danger" *ngIf="errorMsg('nome')">Nome inválido</small>
             </div>
             <!-- {{ nome.value }} -->
         </div>
         <div class="form-group row mt-3" *ngIf="!isInvalid('nome')">
             <!-- [ngClass]="{'input-error': formControls.controls.option1.isValid} -->
             <div class="col-12">
-                <input mask="000.000.000-00" type="text" class="form-control" formControlName="cpf" [ngClass]="aplicaCssErro('cpf')" placeholder="digite seu CPF">
+                <input type="text" class="form-control" formControlName="cpf_cnpj" [ngClass]="aplicaCssErro('cpf_cnpj')" placeholder="digite seu CPF/CNPJ" mask="CPF_CNPJ">
+                <small class="text-danger" *ngIf="errorMsg('cpf_cnpj')">CPF/CNPJ inválido</small>
             </div>
         </div>
-        <div class="form-group row mt-3" *ngIf="!isInvalid('nome') && !isInvalid('cpf')">
+        <div class="form-group row mt-3" *ngIf="!isInvalid('cpf_cnpj')">
             <div class="col-12">
-                <input type="text" class="form-control" formControlName="email" [ngClass]="aplicaCssErro('email')" placeholder="digite seu E-mail">
-                <small class="text-danger" *ngIf="emailInvalido()">E-mail inválido</small>
+                <input type="email" class="form-control" formControlName="email" [ngClass]="aplicaCssErro('email')" placeholder="digite seu e-mail">
+                <small class="text-danger" *ngIf="errorMsg('email')">E-mail inválido</small>
+            </div>
+        </div>
+        <div class="form-group row mt-3" *ngIf="!isInvalid('email')">
+            <div class="col-12">
+                <input type="text" class="form-control" formControlName="telefone" [ngClass]="aplicaCssErro('telefone')" placeholder="digite seu telefone" mask="(00) 00000-0000">
+                <small class="text-danger" *ngIf="errorMsg('telefone')">Telefone inválido</small>
             </div>
         </div>
         <div class="row mt-3">

@@ -23,7 +23,7 @@ export class ImcComponent implements OnInit {
 
   calcularImc() {
     if (!this.isInvalid('peso') && !this.isInvalid('altura'))
-      this.resultado = this.formulario.controls.peso.value / (this.formulario.controls.altura.value * this.formulario.controls.altura.value)
+      this.resultado = this.formulario.controls.peso.value.replace(',', '.') / (this.formulario.controls.altura.value.replace(',', '.') * this.formulario.controls.altura.value.replace(',', '.'))
     else
       this.resultado = undefined
   }

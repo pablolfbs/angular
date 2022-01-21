@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   inputImc: boolean = false
   inputCadastroUsuario: boolean = false
   inputDropbox: boolean = false
-  
+
   constructor() { }
 
   ngOnInit(): void { }
